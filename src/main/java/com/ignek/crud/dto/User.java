@@ -11,6 +11,23 @@ public class User {
 	private String course;
 	private String subjects;
 
+	public User() {
+		super();
+	}
+
+	public User(int userId, String firstName, String lastName, String gender, String emailAddress, String phoneNumber,
+			String course, String subjects) {
+		super();
+		this.userId = userId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.emailAddress = emailAddress;
+		this.phoneNumber = phoneNumber;
+		this.course = course;
+		this.subjects = subjects;
+	}
+
 	public int getUserId() {
 		return userId;
 	}
@@ -74,7 +91,12 @@ public class User {
 	public void setSubjects(String subjects) {
 		this.subjects = subjects;
 	}
-public static void main(String args[]) { 
-	User user = new User();
-	}    
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
+				+ ", emailAddress=" + emailAddress + ", phoneNumber=" + phoneNumber + ", course=" + course
+				+ ", subjects=" + subjects + "]";
+	}
+
 }

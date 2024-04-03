@@ -4,10 +4,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>JSP CRUD</title>
+<title>Welcome</title>
+<style>
+    
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+    }
+
+   
+    button {
+        padding: 15px 30px; 
+        font-size: 20px; 
+    }
+</style>
 </head>
 <body>
-<a href="Add_page.jsp">Add User</a>  
-<a href="viewusers.jsp">View Users</a>  
+    <form action="GetUserServlet" method="post" style="display: inline;">
+        <button type="submit">Go to User Management System</button>
+    </form>
 </body>
 </html>
