@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ignek.crud.constant.UserConstant;
-import com.ignek.crud.db.operations.UserOperations;
+import com.ignek.crud.db.operations.UserServices;
 import com.ignek.crud.dto.User;
 
 @WebServlet("/AddUserServlet")
@@ -22,7 +22,6 @@ public class AddUserServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-
 			String userIdString = request.getParameter(UserConstant.USER_ID);
 			String firstname = request.getParameter(UserConstant.FIRST_NAME);
 			String lastname = request.getParameter(UserConstant.LAST_NAME);
@@ -36,32 +35,22 @@ public class AddUserServlet extends HttpServlet {
 
 			int userId = userIdString != null && !userIdString.isEmpty() ? Integer.parseInt(userIdString) : 0;
 
-			User user = new User();
-			user.setFirstName(firstname);
-			user.setLastName(lastname);
-			user.setGender(gender);
-			user.setPhoneNumber(phonenumber);
-			user.setEmailAddress(emailaddress);
-			user.setCourse(course);
-			user.setSubjects(subjects);
-			user.setUserId(userId);
+			User user = new User(userId, firstname, lastname, gender, emailaddress, phonenumber, course, subjects);
 
 			int result = 0;
 
 			if (userId > 0) {
-				result = UserOperations.updateUser(user);
+				result = UserServices.updateUser(user);
 			} else {
-				result = UserOperations.insertUser(user);
+				result = UserServices.insertUser(user);
 			}
 
 			if (result > 0) {
-				List<User> userList = UserOperations.getAllUsers();
-				request.setAttribute("userList", userList);
+				List<User> userList = UserServices.getAllUsers();
+				request.setAttribute(UserConstant.USER_LIST, userList);
 				RequestDispatcher requestDispatcher = request.getRequestDispatcher("ListsOfUsers.jsp");
 				requestDispatcher.forward(request, response);
-			} else {
 			}
-
 		} catch (NumberFormatException | ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}

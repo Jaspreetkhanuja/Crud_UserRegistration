@@ -8,6 +8,14 @@
 <title>User Management System</title>
 
 <style>
+
+
+  .inline-form {
+    display: inline;
+  
+  }
+
+
 table {
 	border-collapse: collapse;
 	width: 80%;
@@ -16,7 +24,7 @@ table {
 
 th, td {
 	border: 1px solid black;
-	padding: 8px;
+	padding: 8rem;
 	text-align: left;
 }
 
@@ -35,7 +43,7 @@ th {
 </head>
 <body>
 	<form action="<%=request.getContextPath()%>/userForm.jsp" method="get"
-		style="display: inline;">
+		class="inline-form">
 		<button type="submit" class="btn btn-success">Add New User</button>
 	</form>
 

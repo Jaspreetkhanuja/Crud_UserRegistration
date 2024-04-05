@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ignek.crud.constant.UserConstant;
-import com.ignek.crud.db.operations.UserOperations;
+import com.ignek.crud.db.operations.UserServices;
 import com.ignek.crud.dto.User;
 
 @WebServlet("/userOperation")
@@ -34,7 +34,7 @@ public class UpdateAndDeleteUserServlet extends HttpServlet {
 	private void getUserByUserId(HttpServletRequest request, HttpServletResponse response, int userId)
 			throws ServletException, IOException {
 		try {
-			User existingUser = UserOperations.getUser(userId);
+			User existingUser = UserServices.getUser(userId);
 			request.setAttribute(UserConstant.EXISTING_USER, existingUser);
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("userForm.jsp");
 			requestDispatcher.forward(request, response);
@@ -46,9 +46,9 @@ public class UpdateAndDeleteUserServlet extends HttpServlet {
 	private void deleteUser(HttpServletRequest request, HttpServletResponse response, int userId)
 			throws ServletException, IOException {
 		try {
-			boolean deleted = UserOperations.deleteUser(userId);
+			boolean deleted = UserServices.deleteUser(userId);
 			if (deleted) {
-				List<User> userList = UserOperations.getAllUsers();
+				List<User> userList = UserServices.getAllUsers();
 				request.setAttribute(UserConstant.USER_LIST, userList);
 				RequestDispatcher requestDispatcher = request.getRequestDispatcher("ListsOfUsers.jsp");
 				requestDispatcher.forward(request, response);

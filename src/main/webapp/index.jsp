@@ -6,6 +6,12 @@
 <meta charset="UTF-8">
 <title>Welcome</title>
 <style>
+
+<style>
+  .form-inline {
+    display: inline;
+  }
+</style>
     
     body {
         display: flex;
@@ -16,13 +22,13 @@
 
    
     button {
-        padding: 15px 30px; 
-        font-size: 20px; 
+        padding: 15rem 30rem; 
+        font-size: 20rem; 
     }
 </style>
 </head>
 <body>
-    <form action="GetUserServlet" method="post" style="display: inline;">
+    <form action="GetUserServlet" method="post" class="form-inline">
         <button type="submit">Go to User Management System</button>
     </form>
 </body>

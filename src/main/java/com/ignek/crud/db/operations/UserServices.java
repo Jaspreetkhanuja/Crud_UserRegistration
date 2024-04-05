@@ -11,7 +11,7 @@ import com.ignek.crud.constant.UserConstant;
 import com.ignek.crud.db.connection.DbConnection;
 import com.ignek.crud.dto.User;
 
-public class UserOperations {
+public class UserServices {
 
 	// Retrieve all users from the database
 	public static List<User> getAllUsers() throws SQLException, ClassNotFoundException {

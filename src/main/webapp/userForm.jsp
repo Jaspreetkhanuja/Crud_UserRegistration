@@ -12,20 +12,20 @@ body {
 }
 
 .form-group {
-	margin-bottom: 10px;
+	margin-bottom: 10rem;
 	align-items: center;
 }
 
 .form-group label {
-	width: 100px;
+	width: 100rem;
 	text-align: right;
-	margin-right: 10px;
+	margin-right: 10rem;
 }
 
 .form-group input[type="text"], .form-group input[type="tel"],
 	.form-group input[type="email"], .form-group select {
 	flex: 1;
-	width: 200px;
+	width: 200rem;
 }
 
 .form-group input[type="radio"], .form-group input[type="checkbox"] {
