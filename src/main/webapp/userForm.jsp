@@ -104,23 +104,33 @@ body {
 			</div>
 
 			<div class="form-group">
-				<label class="required">Select your subjects:</label><br> <input
+				<label class="required">Select your subjects:</label><br> 
+				<input
 					type="checkbox" id="mathematics" name="subjects"
 					value="Mathematics"
 					${existingUser.subjects.contains('Mathematics') ? 'checked' : ''} />
-				<label for="mathematics">Mathematics</label><br> <input
+
+				<label for="mathematics">Mathematics</label><br> 
+				<input
 					type="checkbox" id="english" name="subjects" value="English"
-					${existingUser.subjects.contains('English') ? 'checked' : ''} /> <label
-					for="english">English</label><br> <input type="checkbox"
+					${existingUser.subjects.contains('English') ? 'checked' : ''} /> 
+					
+				<label for="english">English</label><br> 
+				<input type="checkbox"
 					id="physics" name="subjects" value="Physics"
-					${existingUser.subjects.contains('Physics') ? 'checked' : ''} /> <label
-					for="physics">Physics</label><br> <input type="checkbox"
+					${existingUser.subjects.contains('Physics') ? 'checked' : ''} /> 
+					
+				<label for="physics">Physics</label><br> 
+				<input type="checkbox"
 					id="chemistry" name="subjects" value="Chemistry"
 					${existingUser.subjects.contains('Chemistry') ? 'checked' : ''} />
-				<label for="chemistry">Chemistry</label><br> <input
+
+				<label for="chemistry">Chemistry</label><br> 
+				<input
 					type="checkbox" id="physical_education" name="subjects"
 					value="Physical Education"
 					${existingUser.subjects.contains('Physical Education') ? 'checked' : ''} />
+
 				<label for="physical_education">Physical Education</label><br>
 			</div>
 
