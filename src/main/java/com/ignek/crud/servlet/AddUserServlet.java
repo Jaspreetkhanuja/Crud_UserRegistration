@@ -31,7 +31,7 @@ public class AddUserServlet extends HttpServlet {
 			String course = request.getParameter(UserConstant.COURSE);
 
 			String[] subjectsArray = request.getParameterValues(UserConstant.SUBJECTS);
-			String subjects = String.join(",", subjectsArray);
+			String subjects = String.join(UserConstant.COMMA, subjectsArray);
 
 			int userId = userIdString != null && !userIdString.isEmpty() ? Integer.parseInt(userIdString) : 0;
 

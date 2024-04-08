@@ -8,14 +8,10 @@
 <title>User Management System</title>
 
 <style>
-
-
   .inline-form {
     display: inline;
-  
   }
-
-
+  
 table {
 	border-collapse: collapse;
 	width: 80%;
@@ -24,7 +20,7 @@ table {
 
 th, td {
 	border: 1px solid black;
-	padding: 8rem;
+	padding: 0.5rem;
 	text-align: left;
 }
 

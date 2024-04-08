@@ -11,8 +11,8 @@
   .form-inline {
     display: inline;
   }
-</style>
-    
+
+   
     body {
         display: flex;
         justify-content: center;
@@ -22,8 +22,8 @@
 
    
     button {
-        padding: 15rem 30rem; 
-        font-size: 20rem; 
+        padding: 0.938rem 1.875rem; 
+        font-size: 1.25rem; 
     }
 </style>
 </head>

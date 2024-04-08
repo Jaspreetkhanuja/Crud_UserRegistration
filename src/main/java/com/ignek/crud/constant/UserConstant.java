@@ -32,5 +32,6 @@ public class UserConstant {
 	public static final String USER_LIST = "userList";
 
 	public static final String DELIMETER = ";";
+	public static final String COMMA = ",";
 
 }
